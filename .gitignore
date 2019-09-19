@@ -1,0 +1,7 @@
+#Ignore the configuration file
+
+#Do not upload configuration information
+src/config.json
+
+#Do not upload node modules
+node_modules
