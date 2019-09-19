@@ -1,5 +1,7 @@
 # UwU
 A fun little discord bot that speaks uwu.
+<br>
+UwU will only respond in the bot friendly channel.*
 
 # Commands
 
@@ -8,6 +10,8 @@ A fun little discord bot that speaks uwu.
 
 ## !server
         Provides basic information about the current server.
+
+        This is a command that is callable anywhere.
 
 ## !uwu
         Translates your message to uwu language.
@@ -18,8 +22,6 @@ A fun little discord bot that speaks uwu.
 ## !pokepal
         Returns the name of a pokemon you are searching for and a sprite image of that pokemon.
 
-        Will most likely add more to this output at a later date.
-
 # Setup
 
 ## Create a config.json file in the src folder
@@ -27,8 +29,7 @@ A fun little discord bot that speaks uwu.
     {
         "prefix": "!",
         "token": "your-discord-bot-token-here",
-        "channelID": "channel-id-if-you-want-to-restrict-the-bot-in-code",
-        "generalChannel": "channel-id-of-general-in-discord"
+        "botFriendlyChannel": "channel-id-if-you-want-to-restrict-the-bot-in-code"
     }
 
 <br>
