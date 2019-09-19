@@ -1,7 +1,7 @@
 // Imports
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, token, channelID } = require('./config.json');
+const { prefix, token, channelID, generalChannel} = require('./config.json');
 
 // Declare variables
 const client = new Discord.Client();
@@ -22,6 +22,7 @@ client.on('ready', () => {
 
     // UwU's Paradise channel
     BOT_FRIENDLY_CHANNEL = client.channels.get(channelID);
+    GENERAL_CHANNEL = client.channels.get(generalChannel);
 });
 
 
@@ -34,7 +35,12 @@ client.on("message", message => {
     if(!client.commands.has(command)) return;
 
     try{
-        client.commands.get(command).execute(message, BOT_FRIENDLY_CHANNEL, args);
+        if(command === 'uwu'){
+            client.commands.get(command).execute(message, GENERAL_CHANNEL, args);
+        }else{
+            client.commands.get(command).execute(message, BOT_FRIENDLY_CHANNEL, args);
+        }
+        
     }catch(error){
         console.log(error);
         BOT_FRIENDLY_CHANNEL.send(`Unrecognized command: ${command}`);

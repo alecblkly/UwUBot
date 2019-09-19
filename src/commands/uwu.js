@@ -19,6 +19,6 @@ module.exports = {
     description: 'Request to have you message uwuified!',
     execute(message, channel, args){
         let uwumeMessage = args.join(' ');
-        message.channel.send(`${message.author} ${uwuifyText(uwumeMessage)}`);
+        channel.send(`${uwuifyText(uwumeMessage)}`);
     },
 };
